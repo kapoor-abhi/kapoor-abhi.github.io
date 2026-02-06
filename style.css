@@ -5,12 +5,12 @@
 body {
   margin: 0;
   font-family: Georgia, serif;
-  background: #fff;
+  background: #ffffff;
   color: #222;
 }
 
 
-/* Wrapper */
+/* ================= Wrapper ================= */
 
 .wrapper {
   max-width: 1100px;
@@ -19,10 +19,10 @@ body {
 }
 
 
-/* Navbar */
+/* ================= Navbar ================= */
 
 .navbar {
-  margin: 40px 0 80px;
+  margin: 50px 0 90px;
 
   display: flex;
   justify-content: space-between;
@@ -30,144 +30,174 @@ body {
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 nav a {
-  margin-left: 25px;
+  margin-left: 28px;
   text-decoration: none;
+
   color: #ff3d00;
   font-size: 16px;
+  font-weight: 500;
+
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
 }
 
 
-/* Intro */
+/* ================= Intro ================= */
 
 .intro {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 80px;
+  gap: 90px;
 
-  margin-bottom: 120px;
+  margin-bottom: 140px;
 }
 
-.intro-left h2 {
-  font-weight: normal;
-  font-size: 28px;
-  color: #555;
-  margin-bottom: 25px;
-}
+
+/* Identity Line */
 
 .identity {
   font-style: italic;
-  font-size: 26px;
+  font-size: 27px;
   color: #222;
+
+  letter-spacing: 0.3px;
+
+  margin-bottom: 45px;
+}
+
+
+/* Tagline */
+
+.tagline {
+  font-style: italic;
+  color: #444;
 
   margin-bottom: 40px;
 }
 
-.tagline {
-  font-style: italic;
-  margin-bottom: 35px;
-}
+
+/* Main Text */
 
 .intro-left p {
-  line-height: 1.8;
+  line-height: 1.9;
   font-size: 18px;
-  margin-bottom: 25px;
+
+  margin-bottom: 26px;
 }
 
+
+/* Quote */
+
 blockquote {
+  margin-top: 35px;
+
   border-left: 3px solid #ff3d00;
-  padding-left: 15px;
+  padding-left: 16px;
+
   color: #555;
   font-style: italic;
 }
 
 
-/* Profile */
+/* ================= Profile ================= */
 
 .intro-right {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .intro-right img {
-  width: 220px;
-  height: 220px;
+  width: 230px;
+  height: 230px;
 
   object-fit: cover;
   border-radius: 50%;
 
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
 
-/* Hero */
+/* ================= Hero ================= */
 
 .hero {
-  max-width: 1100px;
-  height: 450px;
+  max-width: 1050px;
+  height: 420px;
 
-  margin: 120px auto;
+  margin: 140px auto;
 
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .hero img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
 
-/* Sections */
+/* ================= Sections ================= */
 
 .section {
-  max-width: 700px;
-  margin: 120px auto;
+  max-width: 720px;
+
+  margin: 140px auto;
 
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 .section h3 {
   font-size: 28px;
-  margin-bottom: 30px;
+  font-weight: 600;
+
+  margin-bottom: 35px;
 }
 
 
-/* Projects */
+/* ================= Projects ================= */
 
 .project-list {
-  padding-left: 20px;
+  padding-left: 22px;
 }
 
 .project-list li {
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 
-/* Footer */
+/* ================= Footer ================= */
 
 footer {
-  margin: 120px 0 60px;
+  margin: 140px 0 70px;
 
   text-align: center;
   color: #777;
   font-size: 14px;
+
+  letter-spacing: 0.2px;
 }
 
 
-/* Mobile */
+/* ================= Mobile ================= */
 
 @media (max-width: 900px) {
 
   .intro {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 45px;
+
     text-align: center;
   }
 
@@ -178,5 +208,14 @@ footer {
   .intro-right img {
     width: 180px;
     height: 180px;
+  }
+
+  .hero {
+    height: 300px;
+    margin: 100px auto;
+  }
+
+  .section {
+    margin: 100px auto;
   }
 }
