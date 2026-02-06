@@ -1,12 +1,25 @@
+/* ================= Global ================= */
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #1B3C53;     /* Deep Dark Blue */
+  --primary-light: #254F6E;
+  --text-dark: #1a1a1a;
+  --text-muted: #555;
+  --border-light: #e6e6e6;
+  --bg-light: #f9f9f9;
 }
 
 body {
-  margin: 0;
   font-family: Georgia, serif;
   background: #ffffff;
-  color: #222;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 
@@ -22,7 +35,7 @@ body {
 /* ================= Navbar ================= */
 
 .navbar {
-  margin: 50px 0 90px;
+  margin: 28px 0 55px;
 
   display: flex;
   justify-content: space-between;
@@ -36,18 +49,19 @@ body {
 }
 
 nav a {
-  margin-left: 28px;
+  margin-left: 24px;
   text-decoration: none;
 
-  color: #ff3d00;
-  font-size: 16px;
+  color: var(--primary-color);
+  font-size: 15px;
   font-weight: 500;
 
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 nav a:hover {
-  opacity: 0.7;
+  color: var(--primary-light);
+  opacity: 0.9;
 }
 
 
@@ -56,9 +70,9 @@ nav a:hover {
 .intro {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 90px;
+  gap: 55px;
 
-  margin-bottom: 140px;
+  margin-bottom: 45px;
 }
 
 
@@ -66,11 +80,11 @@ nav a:hover {
 
 .identity {
   font-style: italic;
-  font-size: 26px !important;
-  font-weight: 300;
-  color: #222;
+  font-size: 27px;
+  font-weight: 600;
   letter-spacing: 0.4px;
-  margin-bottom: 45px;
+
+  margin-bottom: 22px;
 }
 
 
@@ -80,29 +94,29 @@ nav a:hover {
   font-style: italic;
   color: #444;
 
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 
 /* Main Text */
 
 .intro-left p {
-  line-height: 1.9;
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1.7;
 
-  margin-bottom: 26px;
+  margin-bottom: 16px;
 }
 
 
 /* Quote */
 
 blockquote {
-  margin-top: 35px;
+  margin-top: 20px;
 
-  border-left: 3px solid #ff3d00;
-  padding-left: 16px;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 14px;
 
-  color: #555;
+  color: var(--text-muted);
   font-style: italic;
 }
 
@@ -116,13 +130,13 @@ blockquote {
 }
 
 .intro-right img {
-  width: 230px;
-  height: 230px;
+  width: 220px;
+  height: 220px;
 
   object-fit: cover;
   border-radius: 50%;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
 }
 
 
@@ -130,9 +144,9 @@ blockquote {
 
 .hero {
   max-width: 1050px;
-  height: 420px;
+  height: 380px;
 
-  margin: 140px auto;
+  margin: 90px auto;
 
   overflow: hidden;
   border-radius: 6px;
@@ -149,43 +163,138 @@ blockquote {
 /* ================= Sections ================= */
 
 .section {
-  max-width: 720px;
+  max-width: 780px;
 
-  margin: 140px auto;
+  margin: 40px auto;
 
-  font-size: 18px;
-  line-height: 1.9;
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 .section h3 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
 
-  margin-bottom: 35px;
-}
-
-
-/* ================= Projects ================= */
-
-.project-list {
-  padding-left: 22px;
-}
-
-.project-list li {
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 
 /* ================= Footer ================= */
 
 footer {
-  margin: 140px 0 70px;
+  margin: 80px 0 45px;
 
   text-align: center;
   color: #777;
-  font-size: 14px;
+  font-size: 13px;
 
   letter-spacing: 0.2px;
+}
+
+
+/* ================= Buttons ================= */
+
+.button,
+.btn {
+  display: inline-block;
+
+  background: var(--primary-color);
+  color: #ffffff;
+
+  padding: 8px 18px;
+
+  border-radius: 4px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: background 0.2s ease;
+}
+
+.button:hover,
+.btn:hover {
+  background: var(--primary-light);
+}
+
+
+/* ================= Projects ================= */
+
+.project-block {
+  margin-bottom: 28px;   /* was 55px */
+  padding-bottom: 16px; /* was 32px */
+
+  border-bottom: 1px solid var(--border-light);
+}
+
+
+/* Project Title */
+
+.project-block h4 {
+  font-size: 22px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+
+/* Description */
+
+.project-desc {
+  font-size: 16px;
+  color: #333;
+
+  margin-bottom: 10px;
+}
+
+
+/* Bullet Points */
+
+.project-points {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.project-points li {
+  font-size: 15px;
+  line-height: 1.6;
+
+  margin-bottom: 6px;
+}
+
+
+/* Centered Project Image */
+
+.project-image-center {
+  display: flex;
+  justify-content: center;
+
+  margin: 18px 0 14px;
+}
+
+.project-image-center img {
+  width: 720px;
+  height: 400px;
+
+  object-fit: contain;   /* Full Image */
+
+  background: var(--bg-light);
+
+  padding: 8px;
+
+  border-radius: 6px;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+
+/* Tech Stack */
+
+.project-tech {
+  font-size: 14px;
+  color: var(--text-muted);
+
+  font-style: italic;
 }
 
 
@@ -195,7 +304,7 @@ footer {
 
   .intro {
     grid-template-columns: 1fr;
-    gap: 45px;
+    gap: 35px;
 
     text-align: center;
   }
@@ -205,16 +314,48 @@ footer {
   }
 
   .intro-right img {
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
   }
 
   .hero {
-    height: 300px;
-    margin: 100px auto;
+    height: 260px;
+    margin: 70px auto;
   }
 
   .section {
-    margin: 100px auto;
+    margin: 65px auto;
   }
+
+  .project-image-center img {
+    width: 100%;
+    height: 240px;
+  }
+
+  .project-block {
+    margin-bottom: 42px;
+  }
+}
+
+/* ================= Project Repository Link ================= */
+
+.project-repo {
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;   /* ✅ Makes text italic */
+
+  margin: 6px 0 12px;
+}
+
+.project-repo a {
+  color: var(--primary-color);
+  text-decoration: none;
+
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.project-repo a:hover {
+  color: var(--primary-light);
+  opacity: 0.9;
+  text-decoration: underline;
 }

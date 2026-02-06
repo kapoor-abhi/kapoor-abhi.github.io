@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Projects — Abhishek Kapoor</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Projects by Abhishek Kapoor — Machine Learning, MLOps, and AI Systems.">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="wrapper">
+
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
 
@@ -23,41 +31,131 @@
 </header>
 
 
+<!-- ================= PROJECTS ================= -->
+
 <section class="section">
 
-  <h3>Personal Projects</h3>
+  <h3>Selected Projects</h3>
 
 
-  <ul class="project-list">
+  <!-- ================= PROJECT 1 ================= -->
 
-    <li>
-      <strong>AI Data Analyst Framework</strong><br>
-      Autonomous multi-agent system for data analysis using LLMs.
-    </li>
+  <div class="project-block">
 
-    <li>
-      <strong>Customer Churn Prediction</strong><br>
-      Machine learning system for churn forecasting and insights.
-    </li>
+    <h4>KKBox Music Streaming Churn Predictor (MLOps Platform)</h4>
 
-    <li>
-      <strong>Nano-CLIP</strong><br>
-      Open-AI style CLIP model.
-    </li>
+    <p class="project-repo">
+      <a href="https://github.com/kapoor-abhi/kkbox_churn_prediction" target="_blank">
+        Project Repository
+      </a>
+    </p>
+
+    <p class="project-desc">
+      Production-grade MLOps system for real-time churn prediction on large-scale
+      music streaming data, focusing on automation, reproducibility, and monitoring.
+    </p>
+
+    <ul class="project-points">
+      <li>Designed distributed data pipelines using Dask, Pandas, Parquet, and MinIO.</li>
+      <li>Implemented zero-skew training using unified Scikit-learn pipelines.</li>
+      <li>Enabled full traceability with MLflow, DVC, and PostgreSQL.</li>
+      <li>Deployed FastAPI inference service using Docker.</li>
+      <li>Implemented monitoring with Prometheus, Grafana, and Evidently AI.</li>
+    </ul>
+
+    <div class="project-image-center">
+      <img src="images/project1.png" alt="KKBox Churn Platform">
+    </div>
+
+    <p class="project-tech">
+      Tech: Python, LightGBM, Dask, MLflow, DVC, FastAPI, Docker, Prometheus, Grafana
+    </p>
+
+  </div>
 
 
-  </ul>
+  <!-- ================= PROJECT 2 ================= -->
 
-  <p>(Detailed project pages coming soon.)</p>
+  <div class="project-block">
+
+    <h4>AI Data Analyst: Multi-Agent Autonomous Framework</h4>
+
+    <p class="project-repo">
+      <a href="https://github.com/kapoor-abhi/ai-data-analyst" target="_blank">
+        Project Repository
+      </a>
+    </p>
+
+    <p class="project-desc">
+      Autonomous multi-agent system that automates data ingestion,
+      preprocessing, analysis, and visualization using LLMs.
+    </p>
+
+    <ul class="project-points">
+      <li>Built specialized agents for ingestion, merging, and cleaning.</li>
+      <li>Implemented LLM-based preprocessing strategy generation.</li>
+      <li>Enabled self-correcting execution using Python REPL.</li>
+      <li>Integrated DuckDB for fast analytical queries.</li>
+      <li>Maintained persistent workflows using LangGraph.</li>
+    </ul>
+
+    <div class="project-image-center">
+      <img src="images/project2.png" alt="AI Data Analyst Framework">
+    </div>
+
+    <p class="project-tech">
+      Tech: LangGraph, LangChain, Llama 3.3, Python, Pandas, DuckDB, PostgreSQL
+    </p>
+
+  </div>
+
+
+  <!-- ================= PROJECT 3 ================= -->
+
+  <div class="project-block">
+
+    <h4>MiniCLIP: End-to-End Vision-Language Model</h4>
+
+    <p class="project-repo">
+      <a href="https://github.com/kapoor-abhi/Nano_Clip" target="_blank">
+        Project Repository
+      </a>
+    </p>
+
+    <p class="project-desc">
+      Lightweight CLIP-style vision-language model built from scratch
+      and optimized for low-resource deployment.
+    </p>
+
+    <ul class="project-points">
+      <li>Implemented dual-encoder Transformer architecture.</li>
+      <li>Trained on Flickr30k with custom tokenizer.</li>
+      <li>Applied ONNX quantization for optimization.</li>
+      <li>Reduced model size by ~73%.</li>
+      <li>Built interactive inference demo.</li>
+    </ul>
+
+    <div class="project-image-center">
+      <img src="images/project3.png" alt="MiniCLIP Model">
+    </div>
+
+    <p class="project-tech">
+      Tech: PyTorch, Transformers, ONNX, Tokenizers, ONNX Runtime
+    </p>
+
+  </div>
 
 </section>
 
 </div>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
-  
+  © 2026 Abhishek Kapoor · All Rights Reserved
 </footer>
+
 
 </body>
 </html>
