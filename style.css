@@ -66,11 +66,10 @@ nav a:hover {
 
 .identity {
   font-style: italic;
-  font-size: 40px;
+  font-size: 32px;
+  font-weight: 500;
   color: #222;
-
-  letter-spacing: 0.3px;
-
+  letter-spacing: 0.4px;
   margin-bottom: 45px;
 }
 
