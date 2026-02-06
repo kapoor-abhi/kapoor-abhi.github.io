@@ -359,3 +359,56 @@ footer {
   opacity: 0.9;
   text-decoration: underline;
 }
+
+/* ================= Skills Section ================= */
+
+.skills-section {
+  max-width: 780px;
+
+  margin: 35px auto 45px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border-light);
+}
+
+
+.skills-section h3 {
+  font-size: 26px;
+  font-weight: 600;
+
+  margin-bottom: 22px;
+}
+
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.skill-item strong {
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--primary-color);
+}
+
+
+.skill-item span {
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: var(--text-muted);
+}
+
