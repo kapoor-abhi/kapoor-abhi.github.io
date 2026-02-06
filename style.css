@@ -39,7 +39,7 @@ nav a {
   margin-left: 28px;
   text-decoration: none;
 
-  color: #ff3d00;
+  color: #1B3C53;   /* Updated Color */
   font-size: 16px;
   font-weight: 500;
 
@@ -48,6 +48,7 @@ nav a {
 
 nav a:hover {
   opacity: 0.7;
+  text-decoration: underline;
 }
 
 
@@ -66,10 +67,12 @@ nav a:hover {
 
 .identity {
   font-style: italic;
-  font-size: 26px !important;
-  font-weight: 200;
+  font-size: 32px;
+  font-weight: 500;
   color: #222;
+
   letter-spacing: 0.4px;
+
   margin-bottom: 45px;
 }
 
@@ -99,7 +102,7 @@ nav a:hover {
 blockquote {
   margin-top: 35px;
 
-  border-left: 3px solid #ff3d00;
+  border-left: 3px solid #1B3C53; /* Updated Color */
   padding-left: 16px;
 
   color: #555;
