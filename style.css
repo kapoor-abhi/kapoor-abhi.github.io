@@ -80,7 +80,7 @@ nav a:hover {
 
 .identity {
   font-style: italic;
-  font-size: 27px;
+  font-size: 27px !important;
   font-weight: 600;
   letter-spacing: 0.4px;
 
