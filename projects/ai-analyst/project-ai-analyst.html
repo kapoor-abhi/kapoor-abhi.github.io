@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Data Analyst Agent — Abhishek Kapoor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Enterprise grade autonomous AI data analytics system built with LangGraph and LLM orchestration.">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <header class="navbar">
+            <div class="logo">Abhishek Kapoor</div>
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="../../projects.html">Projects</a>
+            </nav>
+        </header>
+
+        <section class="section">
+
+            <div class="project-title-bar">
+
+                <h2>AI Data Analyst Agent</h2>
+
+                <a href="https://github.com/kapoor-abhi/ai-data-analyst-unified" target="_blank" rel="noopener"
+                    class="github-btn">
+                    View on GitHub
+                </a>
+
+            </div>
+
+            <p>
+                A multi agent AI system that automates ETL, cleaning, analysis with always human in the loop and self
+                correcting capabilities, and allow users to query and clean the data using natural language.
+            </p>
+
+            <p>
+                The user ingests raw datasets, the system profiles schema structures, proposes deterministic cleaning
+                strategies,
+                executes transformations securely using sandbox on human approval, and provides conversational SQL and
+                visualization interfaces allowing users to query and clean the data using natural language.
+            </p>
+
+            <h3>System Architecture</h3>
+
+            <div class="project-image-center">
+                <img src="architecture.png" alt="Architecture Diagram">
+            </div>
+
+            <p>
+                The core workflow is orchestrated using LangGraph as a Super Graph containing independently compiled sub
+                graphs.
+            </p>
+
+            <ul>
+                <li><strong>Ingestion Agent:</strong> Optimized dataset loading with vectorized Pandas processing.</li>
+                <li><strong>Merging Agent:</strong> Intelligent schema similarity analysis and automated join strategy
+                    generation.</li>
+                <li><strong>Cleaning Agent:</strong> Profiler, Strategist, and Engineer nodes generating structured
+                    Pydantic cleaning plans.</li>
+                <li><strong>Chat Agent:</strong> Semantic routing to DuckDB SQL expert or Python visualization node.
+                </li>
+            </ul>
+
+            <h3>Execution Safety</h3>
+
+            <p>
+                All LLM generated code is executed inside an isolated Docker sandbox. Strict timeout controls and file
+                system isolation prevent system level risks.
+            </p>
+
+            <div class="project-image-center">
+                <img src="langgraph_graph.png" alt="LangGraph Graph">
+            </div>
+
+            <h3>State Management</h3>
+
+            <p>
+                The system supports Human in the Loop workflows through PostgreSQL based checkpointing using
+                AsyncPostgresSaver. Nested graph states are recursively flattened to allow seamless resumption across
+                stateless HTTP calls.
+            </p>
+
+            <h3>Performance Metrics</h3>
+
+            <ul>
+                <li>Graph Execution p50 Latency: 2.478s</li>
+                <li>LLM Generation p50 Latency: 1.765s</li>
+                <li>Intent Routing p50 Latency: 0.473s</li>
+            </ul>
+
+            <div class="project-image-center">
+                <img src="langfuse.png" alt="Langfuse Monitoring">
+            </div>
+
+            <h3>Frontend Interface</h3>
+
+            <div class="project-image-center">
+                <img src="frontend.png" alt="Frontend Preview">
+            </div>
+
+            <h3>Tech Stack</h3>
+
+            <p>
+                FastAPI, LangChain, LangGraph, Groq Llama 3 models, Pandas, DuckDB, Docker, PostgreSQL, Redis, Langfuse
+            </p>
+
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 Abhishek Kapoor
+    </footer>
+
+</body>
+
+</html>

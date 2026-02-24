@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>KKBox Churn Platform — Abhishek Kapoor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Production grade MLOps platform for churn prediction with automated pipelines and monitoring.">
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <header class="navbar">
+
+      <div class="logo">Abhishek Kapoor</div>
+
+      <nav>
+        <a href="../../index.html">Home</a>
+        <a href="../../projects.html">Projects</a>
+      </nav>
+
+    </header>
+
+
+    <section class="section">
+
+      <div class="project-title-bar">
+
+        <h2>MLOps Platform for Real time Churn Prediction</h2>
+
+        <a href="https://github.com/kapoor-abhi/kkbox_churn_prediction" target="_blank" rel="noopener"
+          class="github-btn">
+          View on GitHub
+        </a>
+
+      </div>
+
+      <p>
+        A production grade Machine Learning platform designed to predict user churn
+        for large scale music streaming data.
+      </p>
+
+      <p>
+        The system emphasizes automation, reproducibility, and observability across
+        the entire ML lifecycle, moving beyond notebook based experimentation.
+      </p>
+
+
+      <!-- ARCHITECTURE -->
+
+      <h3>System Architecture</h3>
+
+      <div class="project-image-center">
+        <img src="architectures.png" alt="System Architecture">
+      </div>
+
+      <p>
+        The platform follows a layered MLOps architecture consisting of
+        data ingestion, distributed feature engineering, unified training pipelines,
+        production inference services, and monitoring components.
+      </p>
+
+      <ul>
+        <li>Lakehouse style data organization using MinIO and Parquet</li>
+        <li>Distributed ETL with Dask for large scale processing</li>
+        <li>Centralized metadata and experiment tracking</li>
+        <li>Containerized deployment for portability</li>
+      </ul>
+
+
+      <!-- DATA PIPELINE -->
+
+      <h3>Data Pipeline</h3>
+
+      <p>
+        The data pipeline is designed to handle high volume user activity logs
+        while maintaining reproducibility and memory efficiency.
+      </p>
+
+      <ul>
+        <li>Chunked ingestion from object storage</li>
+        <li>Distributed aggregation into user level features</li>
+        <li>Versioned Silver and Gold datasets using DVC</li>
+        <li>Schema validation before training</li>
+      </ul>
+
+
+      <!-- TRAINING -->
+
+      <h3>Training and Feature Consistency</h3>
+
+      <p>
+        To prevent training serving skew, all feature transformations are encapsulated
+        inside Scikit learn pipelines and serialized with the trained model.
+      </p>
+
+      <p>
+        This ensures that the inference service always applies identical preprocessing
+        logic as the training environment.
+      </p>
+
+      <ul>
+        <li>Unified preprocessing and modeling pipeline</li>
+        <li>Zero duplication of feature logic</li>
+        <li>Deterministic model reproduction</li>
+      </ul>
+
+
+      <!-- DEPLOYMENT -->
+
+      <h3>Production Deployment</h3>
+
+      <div class="project-image-center">
+        <img src="fastapi.png" alt="FastAPI Inference Service">
+      </div>
+
+      <p>
+        The trained model is deployed as a FastAPI service running inside
+        Docker containers.
+      </p>
+
+      <ul>
+        <li>REST based real time inference</li>
+        <li>Containerized execution environment</li>
+        <li>Config driven deployment</li>
+      </ul>
+
+
+      <!-- TRACKING -->
+
+      <h3>Experiment Tracking</h3>
+
+      <div class="project-image-center">
+        <img src="mlflow.png" alt="MLflow Tracking">
+      </div>
+
+      <p>
+        MLflow is used for experiment tracking and model registry,
+        providing full traceability across code, data, and models.
+      </p>
+
+      <ul>
+        <li>Centralized metrics and artifacts</li>
+        <li>Model version management</li>
+        <li>Reproducible experiment history</li>
+      </ul>
+
+
+      <!-- MONITORING -->
+
+      <h3>Monitoring and Observability</h3>
+
+      <div class="project-image-center">
+        <img src="grafana.png" alt="Grafana Dashboard">
+      </div>
+
+      <p>
+        The system is continuously monitored using Prometheus,
+        Grafana, and Evidently AI.
+      </p>
+
+      <ul>
+        <li>API latency and throughput tracking</li>
+        <li>Infrastructure health monitoring</li>
+        <li>Data drift detection</li>
+      </ul>
+
+
+      <!-- TECH STACK -->
+
+      <h3>Technology Stack</h3>
+
+      <p>
+        Python, Dask, LightGBM, Scikit learn, MLflow, DVC,
+        FastAPI, Docker, PostgreSQL, Prometheus, Grafana, Evidently AI
+      </p>
+
+    </section>
+
+  </div>
+
+
+  <footer>
+    © 2026 Abhishek Kapoor
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MiniCLIP — Vision Language Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Lightweight CLIP style vision language model optimized for low resource deployment.">
+
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <header class="navbar">
+
+            <div class="logo">Abhishek Kapoor</div>
+
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="../../projects.html">Projects</a>
+            </nav>
+
+        </header>
+
+
+        <section class="section">
+
+            <div class="project-title-bar">
+
+                <h2>NanoCLIP : Vision Contrastive Learning Model</h2>
+
+                <a href="https://github.com/kapoor-abhi/nano_clip" target="_blank" rel="noopener" class="github-btn">
+                    View on GitHub
+                </a>
+
+            </div>
+
+            <p>
+                MiniCLIP is a from scratch implementation of the CLIP architecture,
+                designed as a lightweight and deployable vision language model.
+            </p>
+
+            <p>
+                The system learns a shared embedding space for images and text,
+                enabling zero shot classification and semantic retrieval using
+                vector similarity.
+            </p>
+
+
+            <!-- ARCHITECTURE -->
+
+            <h3>Model Architecture</h3>
+
+            <div class="project-image-center">
+                <img src="architecture.png" alt="MiniCLIP Architecture">
+            </div>
+
+            <p>
+                The model follows a dual encoder transformer design consisting
+                of a Vision Transformer and a Text Transformer.
+            </p>
+
+            <ul>
+                <li>Vision Encoder based on ViT</li>
+                <li>Text Encoder with custom tokenizer</li>
+                <li>Shared embedding space of 256 dimensions</li>
+                <li>Contrastive learning objective</li>
+            </ul>
+
+
+            <!-- DATASET -->
+
+            <h3>Training Dataset</h3>
+
+            <p>
+                The model was trained on the Flickr30k dataset,
+                containing 30,000 images with multiple captions per image.
+            </p>
+
+
+            <!-- TOKENIZATION -->
+
+            <h3>Text Processing</h3>
+
+            <p>
+                A custom Byte Pair Encoding tokenizer was trained on caption data
+                using the HuggingFace Tokenizers library.
+            </p>
+
+            <ul>
+                <li>Vocabulary optimized for multimodal alignment</li>
+                <li>Maximum sequence length of 64 tokens</li>
+                <li>Efficient tokenization pipeline</li>
+            </ul>
+
+
+            <!-- OPTIMIZATION -->
+
+            <h3>Model Optimization</h3>
+
+            <div class="project-image-center">
+                <img src="onnx_result.png" alt="ONNX Benchmark Results">
+            </div>
+
+            <p>
+                Post training optimization was performed using ONNX Runtime
+                dynamic quantization to improve deployment efficiency.
+            </p>
+
+            <ul>
+                <li>Float32 to Int8 conversion</li>
+                <li>73 percent model size reduction</li>
+                <li>Improved inference latency</li>
+                <li>Minimal accuracy degradation</li>
+            </ul>
+
+
+            <!-- PERFORMANCE -->
+
+            <h3>Performance Results</h3>
+
+            <ul>
+                <li>Original model size: 35.57 MB</li>
+                <li>Quantized model size: 9.47 MB</li>
+                <li>Top 1 accuracy after quantization: 89.69 percent</li>
+                <li>Inference latency: 10.54 ms</li>
+            </ul>
+
+
+            <!-- TRAINING -->
+
+            <h3>Training Dynamics</h3>
+
+            <div class="project-image-center">
+                <img src="training_history.png" alt="Training History">
+            </div>
+
+            <p>
+                The model was trained for 30 epochs and showed
+                rapid convergence in early stages followed by stable validation.
+            </p>
+
+
+            <!-- INFERENCE -->
+
+            <h3>Zero Shot Inference Examples</h3>
+
+            <p>
+                The trained model supports zero shot classification
+                and semantic image text matching.
+            </p>
+
+            <div class="project-image-center">
+                <img src="query-1.png" alt="Query Example 1">
+            </div>
+
+            <div class="project-image-center">
+                <img src="query-2.png" alt="Query Example 2">
+            </div>
+
+            <div class="project-image-center">
+                <img src="query-3.png" alt="Query Example 3">
+            </div>
+
+
+            <!-- INPUTS -->
+
+            <h3>Query Images</h3>
+
+            <div class="project-image-center">
+                <img src="query-img-1.png" alt="Input Image 1">
+            </div>
+
+            <div class="project-image-center">
+                <img src="query-img-2.png" alt="Input Image 2">
+            </div>
+
+            <div class="project-image-center">
+                <img src="query-img-3.png" alt="Input Image 3">
+            </div>
+
+
+            <!-- STACK -->
+
+            <h3>Technology Stack</h3>
+
+            <p>
+                PyTorch, Transformers, HuggingFace Tokenizers,
+                ONNX Runtime, CUDA, MPS
+            </p>
+
+
+        </section>
+
+    </div>
+
+
+    <footer>
+        © 2026 Abhishek Kapoor
+    </footer>
+
+</body>
+
+</html>
