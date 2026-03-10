@@ -241,20 +241,39 @@ footer {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .project-date {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-size: 12px;
   font-weight: 600;
   color: var(--primary-color);
   background-color: #f1f5f9;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
-  margin-right: 10px;
-  vertical-align: middle;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .project-desc {
