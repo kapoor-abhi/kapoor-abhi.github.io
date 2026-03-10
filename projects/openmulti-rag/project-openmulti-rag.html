@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>OpenMultiRAG — Abhishek Kapoor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="OpenMultiRAG: Advanced Realtime RAG System handling multiple documents, complex workflows, and multimodal parsing.">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <header class="navbar">
+            <div class="logo">Abhishek Kapoor</div>
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="../../about.html">About</a>
+                <a href="../../contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <section class="section">
+
+            <div class="project-title-bar">
+
+                <h2>OpenMultiRAG</h2>
+
+                <a href="https://github.com/kapoor-abhi/open-realtime-rag" target="_blank" rel="noopener"
+                    class="github-btn">
+                    View on GitHub
+                </a>
+
+            </div>
+
+            <p>
+                OpenMultiRAG is an industry-grade, realtime Retrieval-Augmented Generation (RAG) system built to handle
+                multiple documents, complex conversational workflows, multimodal parsing (text + images), strict
+                citation tracking, and intelligent caching.
+            </p>
+
+            <p>
+                The platform is designed using a robust microservices architecture encapsulated in Docker, ensuring
+                seamless and resilient user experiences.
+            </p>
+
+            <h3>System Architecture</h3>
+
+            <div class="project-image-center">
+                <img src="architecture.png" alt="High-Level Architecture Diagram">
+            </div>
+
+            <p>
+                The project consists of several interconnected components running asynchronously:
+            </p>
+
+            <ul>
+                <li><strong>Frontend Interface (Streamlit):</strong> Provides a conversational UI for dynamic document
+                    uploads, real-time polling, and stateful chat, supporting queries across multiple active documents
+                    with citations.</li>
+                <li><strong>API Layer (FastAPI):</strong> The central router managing HTTP requests, tracking state via
+                    PostgreSQL, and delegating extraction to background workers.</li>
+                <li><strong>Background Worker (RQ + Redis):</strong> Offloads PDF extraction and vector embeddings
+                    asynchronously, utilizing PyMuPDF for concurrent parsing of text and images.</li>
+                <li><strong>Multi-Agent Conversational Workflow (LangGraph):</strong> The core intelligence handling
+                    Query Rewrite, Semantic Cache Checks, Intent Analysis, Retrieval, and Generation via Groq LLMs.</li>
+            </ul>
+
+            <h3>Key Features</h3>
+
+            <p>
+                <strong>Robust Memory &amp; Session State:</strong> Leverages LangGraph's AsyncPostgresSaver integrated
+                tightly with PostgreSQL for persistent thread-level memory, allowing seamless context restoration.
+            </p>
+
+            <p>
+                <strong>Smart Semantic Caching:</strong> Uses Redis as a highly efficient semantic cache layer.
+                Identical document scope queries hit the cache, natively bypassing LLM generation to reduce latency and
+                costs.
+            </p>
+
+            <p>
+                <strong>Asynchronous Multimodal Pipeline:</strong> Connects a ThreadPoolExecutor for concurrent layout
+                parsing. Vision LLMs (Llama-3.2-Vision/Scout) caption embedded images, which are embedded as contextual
+                text while raw images are stored safely in CloudFlare R2.
+            </p>
+
+            <p>
+                <strong>Bulletproof Source Tracking:</strong> A custom citation engine explicitly maps contextual chunks
+                to output, rendering exact File and Page Numbers along with relevant images on the frontend.
+            </p>
+
+            <h3>Tech Stack</h3>
+
+            <p>
+                FastAPI, Streamlit, LangGraph, Groq (Llama-3.3-70b, Llama-3.1-8b, Llama-Vision), Qdrant, PostgreSQL,
+                Redis, Langfuse, Docker
+            </p>
+
+        </section>
+
+    </div>
+
+    <footer>
+        © 2026 Abhishek Kapoor
+    </footer>
+
+</body>
+
+</html>

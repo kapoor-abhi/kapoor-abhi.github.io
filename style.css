@@ -243,6 +243,20 @@ footer {
   margin-bottom: 8px;
 }
 
+.project-date {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-right: 10px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .project-desc {
   font-size: 15px;
   margin-bottom: 6px;
