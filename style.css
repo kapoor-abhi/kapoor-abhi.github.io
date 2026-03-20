@@ -6,22 +6,27 @@
 }
 
 :root {
-  /* Premium Scientist Vibe Colors */
-  --slate-900: #0f172a;
-  --slate-800: #1e293b;
-  --slate-600: #475569;
-  --slate-500: #64748b;
-  --slate-200: #e2e8f0;
-  --slate-100: #f1f5f9;
-  --slate-50:  #f8fafc;
+  /* Editorial Lab Theme */
+  --accent-blue: #0b3d91;
+  --accent-blue-strong: #0a2c6b;
+  --slate-900: #0b1220;
+  --slate-800: #1f2937;
+  --slate-600: #4b5563;
+  --slate-500: #6b7280;
+  --slate-200: #e5e7eb;
+  --slate-100: #f3f4f6;
+  --slate-50:  #fafafa;
 
-  --accent-blue: #2563eb;
   --accent-blue-light: #eff6ff;
   --accent-blue-border: #bfdbfe;
 
-  --bg-primary: #ffffff; 
-  
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg-primary: #fbfbf8;
+  --bg-pattern: radial-gradient(var(--slate-200) 1px, transparent 1px);
+  --bg-size: 22px 22px;
+  --bg-position: center top;
+
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: 'IBM Plex Serif', "Times New Roman", serif;
   --font-mono: 'Fira Code', SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
 }
 
@@ -29,14 +34,22 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   /* Elegant, subtle schematic dot pattern */
-  background-image: radial-gradient(var(--slate-200) 1px, transparent 1px);
-  background-size: 24px 24px;
-  background-position: center top;
+  background-image: var(--bg-pattern);
+  background-size: var(--bg-size);
+  background-position: var(--bg-position);
   color: var(--slate-800);
   line-height: 1.6;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
 }
 
 /* ================= Layout ================= */
@@ -57,7 +70,7 @@ body {
 }
 
 .logo {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
   color: var(--slate-900);
@@ -99,7 +112,11 @@ nav a:hover::after {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 64px;
-  margin-bottom: 72px;
+  margin-bottom: 32px;
+}
+
+.intro + .section {
+  margin-top: 32px;
 }
 
 .intro-left {
@@ -108,21 +125,12 @@ nav a:hover::after {
 
 .identity {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   color: var(--slate-500);
   margin-bottom: 24px;
-}
-
-.identity::after {
-  content: '_';
-  color: var(--accent-blue);
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
 }
 
 .intro h1 {
@@ -131,7 +139,7 @@ nav a:hover::after {
   color: var(--slate-800);
   line-height: 1.4;
   letter-spacing: -0.01em;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .intro-left p {
@@ -142,18 +150,19 @@ nav a:hover::after {
 
 /* Profile Image */
 .intro-right img {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 20%;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
-  border: 1px solid var(--slate-100);
+  border-radius: 50%;
+  box-shadow: 0 16px 40px -16px rgba(15, 23, 42, 0.18);
+  border: 1px solid var(--slate-200);
   transition: transform 0.4s ease;
 }
 
 .intro-right img:hover {
   transform: translateY(-4px) scale(1.02);
 }
+
 
 /* ================= Generic Sections ================= */
 .section {
@@ -227,12 +236,12 @@ a {
 }
 
 a:hover {
-  color: #1d4ed8; /* Darker blue */
+  color: var(--accent-blue-strong);
 }
 
 /* ================= Projects (Releases) ================= */
 .project-block {
-  padding: 32px 0;
+  padding: 22px 0;
   border-bottom: 1px solid var(--slate-100);
   transition: background 0.3s ease, border-color 0.3s ease;
 }
@@ -286,7 +295,7 @@ a:hover {
 .project-desc {
   font-size: 16px;
   color: var(--slate-600);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   line-height: 1.6;
 }
 
@@ -463,8 +472,8 @@ footer {
 
   .intro-right img {
     margin: 0 auto;
-    width: 140px;
-    height: 140px;
+    width: 170px;
+    height: 170px;
   }
 
   .section {
